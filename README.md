@@ -5,6 +5,7 @@
 - **What is My Rick Info?**
 
   My Rick Information is an android app developed using `Flutter` framework and `Dart` language. It was basically created to gather information about myself in a cool way. Well what is cooler than having your resumee inside an app you programed yourself while learning ?.
+  
   Such information include my resumee, goals, contact info, information about my grades, links to personal projects and more.
 
 
