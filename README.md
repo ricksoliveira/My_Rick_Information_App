@@ -16,8 +16,5 @@
   
 ![qr code APK](https://user-images.githubusercontent.com/68413884/96203470-57c44d80-0f38-11eb-888c-b9a350b46388.png)
 
-  Once installed, feel free to browser my information and know more about myself!
-  
-  
-  ![appstore](https://user-images.githubusercontent.com/68413884/96204289-509e3f00-0f3a-11eb-85d1-f3f2d10315dc.png)
+  Once installed, feel free to browser my information and know more about myself
 
