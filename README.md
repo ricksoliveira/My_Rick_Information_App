@@ -11,7 +11,9 @@
 - **How can I get this app?**
 
   First things first, this app only works with `android`, it is **NOT** compatible with `ios`.
+  
   If you have an android smartphone, you can simply scan this QR code below, it will automatically redirect you to a folder in my Google drive with the `.apk` inside it.
+  
   Then you just proceed the instructions in your phone when asked to download and install.
   
   **- Warning: You may have to enable the permission in your phone to allow third party applications.**
