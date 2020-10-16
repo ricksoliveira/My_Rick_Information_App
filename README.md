@@ -1,16 +1,19 @@
-# my_rick_information
+# My Rick Info
 
-My Information App
+---
 
-## Getting Started
+- **What is My Rick Info?**
 
-This project is a starting point for a Flutter application.
+  My Rick Information is an android app developed using `Flutter` framework and `Dart` language. It was basically created to gather information about myself in a cool way. Well what is cooler than having your resumee inside an app you programed yourself while learning ?.
+  Such information include my resumee, goals, contact info, information about my grades, links to personal projects and more.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- **How can I get this app?**
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  First things first, this app only works with `android`, it is **not** compatible with `ios`.
+  If you have an android smartphone, you can simply scan this QR code below, it will automatically redirect you to a folder in my Google drive with the `.apk` inside it.
+  Then you just proceed the instructions in your phone when asked to download and install.
+  
+![qr code APK](https://user-images.githubusercontent.com/68413884/96203470-57c44d80-0f38-11eb-888c-b9a350b46388.png)
+
+  Once installed, feel free to browser my information and know more about myself!
