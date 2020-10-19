@@ -18,8 +18,8 @@
   Then you just proceed the instructions in your phone when asked to download and install.
   
   **- Warning: You may have to enable the permission in your phone to allow third party applications.**
-  
-![qr code APK](https://user-images.githubusercontent.com/68413884/96203470-57c44d80-0f38-11eb-888c-b9a350b46388.png)
+ 
+![my-rick-info-AP QR code](https://user-images.githubusercontent.com/68413884/96426600-d4bf2380-11d3-11eb-897d-39536c3887b4.png)
 
   Once installed, feel free to browser my information and know more about myself
 
