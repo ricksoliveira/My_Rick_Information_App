@@ -19,7 +19,7 @@
   
   **- Warning: You may have to enable the permission in your phone to allow third party applications.**
  
-![my-rick-info-AP QR code](https://user-images.githubusercontent.com/68413884/96426600-d4bf2380-11d3-11eb-897d-39536c3887b4.png)
+  ![my-rick-info-AP QR code](https://user-images.githubusercontent.com/68413884/96426600-d4bf2380-11d3-11eb-897d-39536c3887b4.png)
 
   Once installed, feel free to browser my information and know more about myself
 
