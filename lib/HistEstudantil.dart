@@ -1,6 +1,128 @@
 import 'package:flutter/material.dart';
 
 class HistEstudantil extends StatelessWidget {
+
+  Widget spacingH(double h){
+    return SizedBox(
+      height: h,
+    );
+  }
+
+  Widget spacingW(double w){
+    return SizedBox(
+      width: w,
+    );
+  }
+
+  Widget spacingDivider(double H, double W){
+    return SizedBox(
+      height: H,
+      width: W,
+      child: Divider(
+        color: Colors.deepPurple.shade100,
+        thickness: 1,
+      ),
+    );
+  }
+
+  Widget semesterCard(IconData icon, String title){
+    return Card(
+      color: Colors.white,
+      margin: EdgeInsets.fromLTRB(15.0, 25.0, 15.0, 10.0),
+      child: ListTile(
+        leading: Icon(icon,
+          color: Colors.deepPurple,
+          size: 36.0,
+        ),
+        title: Text(title,
+          style: TextStyle(
+            color: Colors.deepPurple[900],
+            fontSize: 22.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget cabecalho(){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          padding: EdgeInsets.all(2.0),
+          decoration: BoxDecoration(
+            color: Colors.deepPurple,
+          ),
+          width: 240.0,
+          child: Text('DISCIPLINA',
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.deepPurple.shade100,
+              fontSize: 14.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Source Sans Pro',
+            ),
+          ),
+        ),
+        spacingW(5.0),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.deepPurple,
+          ),
+          width: 50.0,
+          child: Text('Média',
+            style: TextStyle(
+              color: Colors.deepPurple.shade100,
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Source Sans Pro',
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget discipline(String name, String grade){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          padding: EdgeInsets.all(2.0),
+          decoration: BoxDecoration(
+            color: Colors.deepPurple,
+          ),
+          width: 250.0,
+          child: Text(name,
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.deepPurple.shade100,
+              fontSize: 14.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Source Sans Pro',
+            ),
+          ),
+        ),
+        spacingW(5.0),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.deepPurple,
+          ),
+          width: 40.0,
+          child: Text(grade,
+            style: TextStyle(
+              color: Colors.deepPurple.shade100,
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Source Sans Pro',
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,1858 +148,85 @@ class HistEstudantil extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Card(
-                    color: Colors.white,
-                    margin: EdgeInsets.fromLTRB(15.0, 25.0, 15.0, 10.0),
-                    child: ListTile(
-                      leading: Icon(Icons.looks_one,
-                        color: Colors.deepPurple,
-                        size: 36.0,
-                      ),
-                      title: Text('Semestre  -  2018/2',
-                        style: TextStyle(
-                          color: Colors.deepPurple[900],
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 240.0,
-                        child: Text('DISCIPLINA',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 50.0,
-                        child: Text('Média',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Administração Geral',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.2',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Arquitetura de Computadores',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.6',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Algoritmos e Lógica de Programação',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.4',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Laboratório de Hardware',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.6',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Programação em Microinformática',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.9',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Inglês I - Dispensado por Proficiência',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('10.0',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Matemática Discreta',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('10.0',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Card(
-                    color: Colors.white,
-                    margin: EdgeInsets.fromLTRB(15.0, 25.0, 15.0, 10.0),
-                    child: ListTile(
-                      leading: Icon(Icons.looks_two,
-                        color: Colors.deepPurple,
-                        size: 36.0,
-                      ),
-                      title: Text('Semestre  -  2019/1',
-                        style: TextStyle(
-                          color: Colors.deepPurple[900],
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 240.0,
-                        child: Text('DISCIPLINA',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 50.0,
-                        child: Text('Média',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Comunicação e Expressão',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.2',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Contabilidade',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.4',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Cálculo',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('10.0',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Economia e Finanças',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.9',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Engenharia de Software I',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.2',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Inglês II  - Dispensado por Proficiência',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('10.0',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Linguagem de Programação',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.5',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Sistemas de Informação',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.5',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Card(
-                    color: Colors.white,
-                    margin: EdgeInsets.fromLTRB(15.0, 25.0, 15.0, 10.0),
-                    child: ListTile(
-                      leading: Icon(Icons.looks_3,
-                        color: Colors.deepPurple,
-                        size: 36.0,
-                      ),
-                      title: Text('Semestre  -  2019/2',
-                        style: TextStyle(
-                          color: Colors.deepPurple[900],
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 240.0,
-                        child: Text('DISCIPLINA',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 50.0,
-                        child: Text('Média',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Engenharia de Software II',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.4',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Estatística Aplicada',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.5',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Estruturas de Dados',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.6',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Inglês III - Dispensado por Proficiência',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.0',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Interação Humano Computador',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('7.3',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Segurança da Informação',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.7',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Sistemas Operacionais I',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('10.0',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Sociedade e Tecnologia',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.9',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Card(
-                    color: Colors.white,
-                    margin: EdgeInsets.fromLTRB(15.0, 25.0, 15.0, 10.0),
-                    child: ListTile(
-                      leading: Icon(Icons.looks_4,
-                        color: Colors.deepPurple,
-                        size: 36.0,
-                      ),
-                      title: Text('Semestre  -  2020/1',
-                        style: TextStyle(
-                          color: Colors.deepPurple[900],
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 240.0,
-                        child: Text('DISCIPLINA',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 50.0,
-                        child: Text('Média',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Banco de Dados',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.9',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Eletica - Programação de Scripts',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.5',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Empreendedorismo',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.7',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Engenharia de Software III',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.9',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Inglês IV - Dispensado por Proficiência',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.0',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Metodologia da Pesquisa Científica',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.1',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Programação Orientada a Objetos',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('9.5',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Sistemas Operacionais II',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('10.0',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Card(
-                    color: Colors.white,
-                    margin: EdgeInsets.fromLTRB(15.0, 25.0, 15.0, 10.0),
-                    child: ListTile(
-                      leading: Icon(Icons.looks_5,
-                        color: Colors.deepPurple,
-                        size: 36.0,
-                      ),
-                      title: Text('Semestre  -  Andamento',
-                        style: TextStyle(
-                          color: Colors.deepPurple[900],
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 240.0,
-                        child: Text('DISCIPLINA',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 50.0,
-                        child: Text('Média',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Inglês V - Dispensado por Proficiência',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        height: 20.0,
-                        width: 40.0,
-                        child: Text('7.0',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Card(
-                    color: Colors.white,
-                    margin: EdgeInsets.fromLTRB(15.0, 25.0, 15.0, 10.0),
-                    child: ListTile(
-                      leading: Icon(Icons.looks_6,
-                        color: Colors.deepPurple,
-                        size: 36.0,
-                      ),
-                      title: Text('Semestre  -  Andamento',
-                        style: TextStyle(
-                          color: Colors.deepPurple[900],
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 240.0,
-                        child: Text('DISCIPLINA',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 50.0,
-                        child: Text('Média',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                    width: 300.0,
-                    child: Divider(
-                      color: Colors.deepPurple.shade100,
-                      thickness: 1,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 250.0,
-                        child: Text('Inglês VI - Dispensado por Proficiência',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.deepPurple,
-                        ),
-                        width: 40.0,
-                        child: Text('8.0',
-                          style: TextStyle(
-                            color: Colors.deepPurple.shade100,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Source Sans Pro',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
+                  semesterCard(Icons.looks_one, 'Semestre  -  2018/2'),
+                  cabecalho(),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Administração Geral', '9.2'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Arquitetura de Computadores', '9.6'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Algoritmos e Lógica de Programação', '8.4'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Laboratório de Hardware', '9.6'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Programação em Microinformática', '8.9'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Inglês I - Dispensado por Proficiência', '10.0'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Matemática Discreta', '10.0'),
+                  semesterCard(Icons.looks_two, 'Semestre  -  2019/1'),
+                  cabecalho(),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Comunicação e Expressão', '8.2'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Contabilidade', '9.4'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Cálculo', '10.0'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Economia e Finanças', '8.9'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Engenharia de Software I', '8.2'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Inglês II  - Dispensado por Proficiência', '10.0'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Linguagem de Programação', '9.5'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Sistemas de Informação', '9.5'),
+                  semesterCard(Icons.looks_3, 'Semestre  -  2019/2'),
+                  cabecalho(),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Engenharia de Software II', '8.4'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Estatística Aplicada', '8.5'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Estruturas de Dados', '8.6'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Inglês III - Dispensado por Proficiência', '8.0'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Interação Humano Computador', '7.3'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Segurança da Informação', '9.7'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Sistemas Operacionais I', '10.0'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Sociedade e Tecnologia', '8.9'),
+                  semesterCard(Icons.looks_4, 'Semestre  -  2020/1'),
+                  cabecalho(),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Banco de Dados', '8.9'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Eletica - Programação de Scripts', '9.5'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Empreendedorismo', '9.7'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Engenharia de Software III', '8.9'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Inglês IV - Dispensado por Proficiência', '9.0'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Metodologia da Pesquisa Científica', '9.1'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Programação Orientada a Objetos', '9.5'),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Sistemas Operacionais II', '10.0'),
+                  semesterCard(Icons.looks_5, 'Semestre  -  Andamento'),
+                  cabecalho(),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Inglês V - Dispensado por Proficiência', '7.0'),
+                  semesterCard(Icons.looks_6, 'Semestre  -  Andamento'),
+                  cabecalho(),
+                  spacingDivider(10.0, 300.0),
+                  discipline('Inglês VI - Dispensado por Proficiência', '8.0'),
+                  spacingH(20.0),
                 ],
               ),
             ),

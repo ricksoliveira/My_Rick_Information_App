@@ -11,6 +11,43 @@ class Contato extends StatelessWidget {
     }
   }
 
+  Widget spacingH(double h){
+    return SizedBox(
+      width: h,
+    );
+  }
+
+  Widget spacingDivider(double H, double W, double thick){
+    return SizedBox(
+      height: H,
+      width: W,
+      child: Divider(
+        color: Colors.deepPurple.shade100,
+        thickness: thick,
+      ),
+    );
+  }
+
+  Widget contactCard(IconData icon, String title, double fontSize){
+    return Card(
+      color: Colors.white,
+      margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+      child: ListTile(
+        leading: Icon(icon,
+          color: Colors.deepPurple,
+          size: 26.0,
+        ),
+        title: Text(title,
+          style: TextStyle(
+            color: Colors.deepPurple[900],
+            fontSize: fontSize,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,66 +89,10 @@ class Contato extends StatelessWidget {
                     subtitle: Text('Nº 1072, apartamento 51'),
                   ),
                 ),
-
-                Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-                  child: ListTile(
-                    leading: Icon(Icons.mail,
-                      color: Colors.deepPurple,
-                      size: 26.0,
-                    ),
-                    title: Text('henrique.oliveira63@fatec.sp.gov.br',
-                      style: TextStyle(
-                        color: Colors.deepPurple[900],
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-                  child: ListTile(
-                    leading: Icon(Icons.mail,
-                      color: Colors.deepPurple,
-                      size: 26.0,
-                    ),
-                    title: Text('h2otraceur@gmail.com',
-                      style: TextStyle(
-                        color: Colors.deepPurple[900],
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 10.0),
-                  child: ListTile(
-                    leading: Icon(Icons.phone,
-                      color: Colors.deepPurple,
-                      size: 26.0,
-                    ),
-                    title: Text('+55 (19) 9 9831-5227',
-                      style: TextStyle(
-                        color: Colors.deepPurple[900],
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 40.0,
-                  width: 250.0,
-                  child: Divider(
-                    color: Colors.deepPurple.shade100,
-                    thickness: 2.0,
-                  ),
-                ),
+                contactCard(Icons.mail, 'henrique.oliveira63@fatec.sp.gov.br', 14.0),
+                contactCard(Icons.mail, 'h2otraceur@gmail.com', 16.0),
+                contactCard(Icons.phone, '+55 (19) 9 9831-5227', 16.0),
+                spacingDivider(40.0, 250.0, 2.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -132,9 +113,7 @@ class Contato extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
+                    spacingH(10.0),
                     FlatButton(
                       onPressed: (){
                         String urlgit = "https://github.com/ricksoliveira";
@@ -148,14 +127,7 @@ class Contato extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 40.0,
-                  width: 250.0,
-                  child: Divider(
-                    color: Colors.deepPurple.shade100,
-                    thickness: 2.0,
-                  ),
-                ),
+                spacingDivider(40.0, 250.0, 2.0),
               ],
             ),
           ),
